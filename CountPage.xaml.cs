@@ -22,7 +22,7 @@ public partial class CountPage : ContentPage
             if (!isPaused)
             {
                 count++;
-                CountLabel.Text = $"Count -------------: {count}";
+                CountLabel.Text = $"Count --------------: {count}";
                 await Task.Delay(500);
             }
             else
