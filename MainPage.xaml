@@ -34,7 +34,13 @@
             <Button
                 Text="About Me"
                 Clicked="OnAboutMeClicked"
-                HorizontalOptions="Fill" /> 
+                HorizontalOptions="Fill" />
+
+            <Button
+                Text="Start Counter Page"
+                Clicked="OnStartCounterClicked"
+                HorizontalOptions="Fill" />
+
 
         </VerticalStackLayout>
     </ScrollView>
