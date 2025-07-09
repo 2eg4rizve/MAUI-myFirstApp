@@ -4,7 +4,19 @@
              x:Class="myFirstApp.CountPage"
              Title="Counter">
 
-    <VerticalStackLayout Padding="30" Spacing="25" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+    <VerticalStackLayout Padding="30" Spacing="20" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+
+        <Label Text="Start from:" />
+        <Entry x:Name="StartEntry"
+               Placeholder="Enter start number"
+               Keyboard="Numeric"
+               WidthRequest="200"/>
+
+        <Label Text="End at:" />
+        <Entry x:Name="EndEntry"
+               Placeholder="Enter end number"
+               Keyboard="Numeric"
+               WidthRequest="200"/>
 
         <Label x:Name="CountLabel" 
                Text="Count: 0" 
@@ -28,5 +40,4 @@
                 HorizontalOptions="Center" />
 
     </VerticalStackLayout>
-
 </ContentPage>

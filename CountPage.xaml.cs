@@ -3,6 +3,8 @@ namespace myFirstApp;
 public partial class CountPage : ContentPage
 {
     int count = 0;
+    int startValue = 0;
+    int endValue = 20;
     bool isPaused = false;
     bool isCounting = false;
 
@@ -13,16 +15,32 @@ public partial class CountPage : ContentPage
 
     private async void OnStartClicked(object sender, EventArgs e)
     {
+        // Parse input values
+        if (!int.TryParse(StartEntry.Text, out startValue) || !int.TryParse(EndEntry.Text, out endValue))
+        {
+            await DisplayAlert("Input Error", "Please enter valid numbers for start and end.", "OK");
+            return;
+        }
+
+        if (endValue <= startValue)
+        {
+            await DisplayAlert("Range Error", "End must be greater than Start.", "OK");
+            return;
+        }
+
+        count = startValue;
         isCounting = true;
+        isPaused = false;
+
         StartButton.IsEnabled = false;
         PauseButton.IsEnabled = true;
 
-        while (count < 20 && isCounting)
+        while (count <= endValue && isCounting)
         {
             if (!isPaused)
             {
+                CountLabel.Text = $"Count: {count}";
                 count++;
-                CountLabel.Text = $"Count --------------: {count}";
                 await Task.Delay(500);
             }
             else
@@ -31,13 +49,11 @@ public partial class CountPage : ContentPage
             }
         }
 
-        if (count >= 20)
+        if (count > endValue)
         {
             StartButton.IsEnabled = true;
             PauseButton.IsEnabled = false;
-            count = 0;
             isCounting = false;
-
         }
     }
 
