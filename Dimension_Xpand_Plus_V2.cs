@@ -171,14 +171,15 @@ namespace myFirstApp
             if (serialPort.IsOpen)
             {
                 serialPort.Close();
-                statusLabel.Text = "Server Disconnected.";
+                statusLabel.Text += "\nServer Disconnected.";
+
                 return false;
             }
             else
             {
                 serialPort.Open();
                 IsConnected = true;
-                statusLabel.Text = "Connected & Server started. Waiting for response.....";
+                statusLabel.Text += "\nConnected & Server started. Waiting for response.....";
                 return true;
             }
         }
