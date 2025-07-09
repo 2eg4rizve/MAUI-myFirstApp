@@ -31,13 +31,19 @@
                 Clicked="OnCounterClicked"
                 HorizontalOptions="Fill" />
 
-
-            <Label x:Name="StatusLabel"
-                   Text="Status: Ready"
-                   FontSize="14"
-                   TextColor="DarkSlateGray"
-                   HorizontalOptions="Center"
-                   Margin="0,10"/>  
+            <ScrollView x:Name="StatusScrollView"
+                    Margin="10"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand">
+                    <Label x:Name="StatusLabel"
+                       Text="Status: Ready"
+                       FontSize="24"
+                       TextColor="DarkSlateGray"
+                       HorizontalOptions="FillAndExpand"
+                       VerticalOptions="Start"
+                       LineBreakMode="WordWrap"
+                       Margin="0,10" /> 
+            </ScrollView>
 
             <!--<Button
                 Text="About Me"

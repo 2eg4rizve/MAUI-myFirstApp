@@ -51,9 +51,7 @@
 		<MauiFont Include="Resources\Fonts\*" />
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
 	</ItemGroup>
-	<ItemGroup>
-	  <Compile Remove="BaseMachine.cs" />
-	</ItemGroup>
+
 
 	<!-- NuGet packages -->
 	<ItemGroup>
