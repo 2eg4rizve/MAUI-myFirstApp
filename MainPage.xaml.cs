@@ -2,24 +2,32 @@
 
 public partial class MainPage : ContentPage
 {
-	int count = 0;
-
-	public MainPage()
+	string Status= "Ready";
+    dynamic server;
+    public MainPage()
 	{
 		InitializeComponent();
-	}
+        server=new Dimension_Xpand_Plus_V2("COM3");
+    }
 
 	private void OnCounterClicked(object? sender, EventArgs e)
 	{
-		count++;
 
-		if (count == 1)
-			CounterBtn.Text = $"Clicked {count} time";
-		else
-			CounterBtn.Text = $"Clicked {count} times";
+		
+        if (server.portAction())
+        {
+            MachineButton.Text = "Disconnect";
+           // _serverConnected = true;
+        }
+        else
+        {
+            MachineButton.Text = "Connect";
+            //_serverConnected = false;
+        }
+        SemanticScreenReader.Announce(MachineButton.Text);
 
-		SemanticScreenReader.Announce(CounterBtn.Text);
-	}
+
+    }
 
 
     private async void OnAboutMeClicked(object sender, EventArgs e)
@@ -30,6 +38,11 @@ public partial class MainPage : ContentPage
     private async void OnStartCounterClicked(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new CountPage());
+    }
+
+    private async void OnSeeStudentsClicked(object sender, EventArgs e)
+    {
+        //await Navigation.PushAsync(new StudentsPage());
     }
 
 

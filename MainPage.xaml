@@ -25,13 +25,13 @@
                 SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
 
             <Button
-                x:Name="CounterBtn"
-                Text="Click me" 
+                x:Name="MachineButton"
+                Text="Connect" 
                 SemanticProperties.Hint="Counts the number of times you click"
                 Clicked="OnCounterClicked"
                 HorizontalOptions="Fill" />
 
-            <Button
+            <!--<Button
                 Text="About Me"
                 Clicked="OnAboutMeClicked"
                 HorizontalOptions="Fill" />
@@ -40,6 +40,13 @@
                 Text="Start Counter Page"
                 Clicked="OnStartCounterClicked"
                 HorizontalOptions="Fill" />
+
+
+            <Button
+                Text="See All Students"
+                Clicked="OnSeeStudentsClicked"
+                HorizontalOptions="Fill" />--> 
+
 
 
         </VerticalStackLayout>
