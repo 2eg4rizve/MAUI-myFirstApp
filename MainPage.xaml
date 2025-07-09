@@ -31,6 +31,14 @@
                 Clicked="OnCounterClicked"
                 HorizontalOptions="Fill" />
 
+
+            <Label x:Name="StatusLabel"
+                   Text="Status: Ready"
+                   FontSize="14"
+                   TextColor="DarkSlateGray"
+                   HorizontalOptions="Center"
+                   Margin="0,10"/>  
+
             <!--<Button
                 Text="About Me"
                 Clicked="OnAboutMeClicked"

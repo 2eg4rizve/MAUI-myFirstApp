@@ -140,31 +140,51 @@ namespace myFirstApp
 
         }
 
-        public bool portAction()
+        //public bool portAction()
+        //{
+        //    //MessageHelper.Instance.Text = "Connecting.....";
+        //    //apiHelper.GetAccessToken();
+        //    if (serialPort.IsOpen)
+        //    {
+        //        //CheckMachineOrder("10002477", "01");
+        //        serialPort.Close();
+        //       // MessageHelper.Instance.Text = "Server Disconnected.";
+        //        return false;
+        //    }
+        //    else
+        //    {
+        //        //SerialPort();
+        //        //this.SendTestOrder(serialPort, "1001515701");
+
+        //        //CheckMachineOrder("10002477", "01");
+        //        serialPort.Open();
+        //        IsConnected=true;
+
+        //        // MessageHelper.Instance.Text = "Connected & Server started. Waiting for response.....";
+        //        return true;
+        //    }
+
+        //}
+
+        public bool portAction(Label statusLabel)
         {
-            //MessageHelper.Instance.Text = "Connecting.....";
-            //apiHelper.GetAccessToken();
             if (serialPort.IsOpen)
             {
-                //CheckMachineOrder("10002477", "01");
                 serialPort.Close();
-               // MessageHelper.Instance.Text = "Server Disconnected.";
+                statusLabel.Text = "Server Disconnected.";
                 return false;
             }
             else
             {
-                //SerialPort();
-                //this.SendTestOrder(serialPort, "1001515701");
-
-                //CheckMachineOrder("10002477", "01");
                 serialPort.Open();
-                IsConnected=true;
-
-                // MessageHelper.Instance.Text = "Connected & Server started. Waiting for response.....";
+                IsConnected = true;
+                statusLabel.Text = "Connected & Server started. Waiting for response.....";
                 return true;
             }
-
         }
+
+
+
 
         private void CheckMachineOrder(string sampleId, string serial)
         {

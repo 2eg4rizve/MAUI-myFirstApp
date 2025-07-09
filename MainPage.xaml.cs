@@ -10,40 +10,52 @@ public partial class MainPage : ContentPage
         server=new Dimension_Xpand_Plus_V2("COM3");
     }
 
-	private void OnCounterClicked(object? sender, EventArgs e)
-	{
+    //private void OnCounterClicked(object? sender, EventArgs e)
+    //{
 
-		
-        if (server.portAction())
+
+    //       if (server.portAction())
+    //       {
+    //           MachineButton.Text = "Disconnect";
+    //          // _serverConnected = true;
+    //       }
+    //       else
+    //       {
+    //           MachineButton.Text = "Connect";
+    //           //_serverConnected = false;
+    //       }
+    //       SemanticScreenReader.Announce(MachineButton.Text);
+
+
+    //   }
+
+    private void OnCounterClicked(object? sender, EventArgs e)
+    {
+        if (server.portAction(StatusLabel))
         {
             MachineButton.Text = "Disconnect";
-           // _serverConnected = true;
         }
         else
         {
             MachineButton.Text = "Connect";
-            //_serverConnected = false;
         }
+
         SemanticScreenReader.Announce(MachineButton.Text);
-
-
     }
 
 
-    private async void OnAboutMeClicked(object sender, EventArgs e)
-    {
-        await Navigation.PushAsync(new AboutPage()); // Correct
-    }
 
-    private async void OnStartCounterClicked(object sender, EventArgs e)
-    {
-        await Navigation.PushAsync(new CountPage());
-    }
 
-    private async void OnSeeStudentsClicked(object sender, EventArgs e)
-    {
-        //await Navigation.PushAsync(new StudentsPage());
-    }
+
+
+
+
+
+
+
+
+
+
 
 
 
